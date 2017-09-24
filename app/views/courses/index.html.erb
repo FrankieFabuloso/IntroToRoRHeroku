@@ -1,0 +1,19 @@
+<h1>Searching for - <%= @search_term %></h1>
+
+<h3> Found Info For: <%=  @name %> </h3>
+<h4> <%=  @name %> is a: </h4>
+<div class="pokemon-information">
+  <ul>
+  <% @types.each do | type |%>
+    <li> <%= type["type"]["name"] %></li>
+  <% end %>
+  </ul>
+  <h4> <%=  @name %>'s Move List </h4>
+  <ul>
+  <% @moves.each do | move |%>
+    <li> <%= move["move"]["name"]%> –
+      <%= move["version_group_details"][0]["level_learned_at"]%>
+    </li>
+  <% end %>
+  </ul>
+</div>
